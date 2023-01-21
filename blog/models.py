@@ -21,7 +21,19 @@ class Post(models.Model):
   published_date = models.DateTimeField(blank=True, null=True)
 
 
-
+  imagenprincipal = models.ImageField(upload_to='images/', null = True, blank = False)
+  imagensecundaria00 = models.ImageField(upload_to='images/', null = True, blank = True)
+  imagensecundaria01 = models.ImageField(upload_to='images/', null = True, blank = True)
+  imagensecundaria02 = models.ImageField(upload_to='images/', null = True, blank = True)
+  imagensecundaria03 = models.ImageField(upload_to='images/', null = True, blank = True)
+  imagensecundaria04 = models.ImageField(upload_to='images/', null = True, blank = True)
+  imagensecundaria05 = models.ImageField(upload_to='images/', null = True, blank = True)
+  imagensecundaria06 = models.ImageField(upload_to='images/', null = True, blank = True)
+  imagensecundaria07 = models.ImageField(upload_to='images/', null = True, blank = True)
+  imagensecundaria08 = models.ImageField(upload_to='images/', null = True, blank = True)
+  imagensecundaria09 = models.ImageField(upload_to='images/', null = True, blank = True)
+  imagensecundaria10 = models.ImageField(upload_to='images/', null = True, blank = True)
+  imagensecundaria11 = models.ImageField(upload_to='images/', null = True, blank = True)
 
   def publish(self):
     self.published_date = timezone.now()

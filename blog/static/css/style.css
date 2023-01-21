@@ -9399,6 +9399,7 @@ a.text-dark:hover, a.text-dark:focus {
   tr,
   img {
     page-break-inside: avoid;
+    width: 100%;
   }
   p,
   h2,

@@ -12,6 +12,30 @@ window.onload = function() {
 
 </script>
 
+<!-- Header Start -->
+<div class="jumbotron jumbotron-fluid mb-5">
+    <div class="container text-center py-5">
+        <h1 class="text-primary mb-4">Ambientes SRL</h1>
+        <h1 class="text-white display-3 mb-5">Inmobiliaria</h1>
+        <div class="mx-auto" style="width: 100%; max-width: 600px;">
+            <div class="input-group">
+                <input type="text" class="form-control border-light" style="padding: 30px;" placeholder="Busqueda por Lugar">
+                <div class="input-group-append">
+                    <button class="btn btn-primary px-3">Track & Trace</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header End -->
+<!-- carrusel inicio -->
+
+
+
+<!-- carrusel final -->
+
+
+
 <!-- Team Start -->
 <div class="container-fluid pt-5">
     <div class="container">
@@ -19,16 +43,18 @@ window.onload = function() {
             <h6 class="text-primary text-uppercase font-weight-bold">Compra Ya</h6>
             <h1 class="mb-4">Nuestros inmuebles</h1>
         </div>
+
+
         <div class="row">
+            {% for post in posts %}
 
-
             <div class="col-lg-4 col-md-6">
                 <div class="team card position-relative overflow-hidden border-0 mb-5">
-                    <img class="card-img-top" src="{% static 'img/blog-1.jpg' %}" alt="">
+                    <img class="card-img-top" src="{{ post.imagenprincipal.url }}" width="100%" height="250" alt="">
                     <div class="card-body text-center p-0">
                         <div class="team-text d-flex flex-column justify-content-center bg-secondary">
-                            <h5 class="font-weight-bold">Full Name</h5>
-                            <span>Designation</span>
+                            <h5 class="font-weight-bold">{{ post.titulo }}</h5>
+                            <span>{{post.descripcion}}</span>
                         </div>
                         <div class="team-social d-flex align-items-center justify-content-center bg-primary">
                             <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
@@ -42,66 +68,7 @@ window.onload = function() {
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="team card position-relative overflow-hidden border-0 mb-5">
-                    <img class="card-img-top" src="{% static 'img/blog-1.jpg' %}" alt="">
-                    <div class="card-body text-center p-0">
-                        <div class="team-text d-flex flex-column justify-content-center bg-secondary">
-                            <h5 class="font-weight-bold">Full Name</h5>
-                            <span>Designation</span>
-                        </div>
-                        <div class="team-social d-flex align-items-center justify-content-center bg-primary">
-                            <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-dark btn-social mr-2"
-                                href="https://www.facebook.com/AmbientesConstructoraInmobiliaria/"><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-dark btn-social mr-2" href="#"><i
-                                    class="fab fa-linkedin-in"></i></a>
-                            <a class="btn btn-outline-dark btn-social" href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="team card position-relative overflow-hidden border-0 mb-5">
-                    <img class="card-img-top" src="{% static 'img/blog-1.jpg' %}" alt="">
-                    <div class="card-body text-center p-0">
-                        <div class="team-text d-flex flex-column justify-content-center bg-secondary">
-                            <h5 class="font-weight-bold">Full Name</h5>
-                            <span>Designation</span>
-                        </div>
-                        <div class="team-social d-flex align-items-center justify-content-center bg-primary">
-                            <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-dark btn-social mr-2"
-                                href="https://www.facebook.com/AmbientesConstructoraInmobiliaria/"><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-dark btn-social mr-2" href="#"><i
-                                    class="fab fa-linkedin-in"></i></a>
-                            <a class="btn btn-outline-dark btn-social" href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="team card position-relative overflow-hidden border-0 mb-5">
-                    <img class="card-img-top" src="{% static 'img/blog-1.jpg' %}" alt="">
-                    <div class="card-body text-center p-0">
-                        <div class="team-text d-flex flex-column justify-content-center bg-secondary">
-                            <h5 class="font-weight-bold">Full Name</h5>
-                            <span>Designation</span>
-                        </div>
-                        <div class="team-social d-flex align-items-center justify-content-center bg-primary">
-                            <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-dark btn-social mr-2"
-                                href="https://www.facebook.com/AmbientesConstructoraInmobiliaria/"><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-dark btn-social mr-2" href="#"><i
-                                    class="fab fa-linkedin-in"></i></a>
-                            <a class="btn btn-outline-dark btn-social" href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
 
 
         </div>
@@ -109,13 +76,12 @@ window.onload = function() {
 </div>
 <!-- Team End -->
 
-
 <!-- Testimonial Start -->
 <div class="container-fluid py-5">
     <div class="container">
         <div class="text-center pb-2">
             <h6 class="text-primary text-uppercase font-weight-bold">Testimonial</h6>
-            <h1 class="mb-4">Our Clients Say</h1>
+            <h1 class="mb-4">Our Clients Say gaa</h1>
         </div>
         <div class="owl-carousel testimonial-carousel">
             <div class="position-relative bg-secondary p-4">
