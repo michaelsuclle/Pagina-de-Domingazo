@@ -27,3 +27,8 @@ def about (request):
 
 def sellwithus (request):
     return render(request, 'blog/sellwithus.html', {})
+
+def furnitures (request):
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+    return render(request, 'blog/furnitures.html', {'posts': posts})
+ 
