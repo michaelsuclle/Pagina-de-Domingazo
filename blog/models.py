@@ -13,9 +13,28 @@ class Post(models.Model):
   areatotal = models.IntegerField()
   areaconstruida = models.IntegerField()
   cantdedormitorios = models.IntegerField()
+  cantdebaños = models.IntegerField()
   hayasensor = models.BooleanField()
   descuento = models.IntegerField(default = 0)
   descripcion = models.TextField()
+  preciodolares = models.IntegerField(default = 0)
+
+  listadeestados = [
+    (1, "En construccion"),
+    (2, "En planos"),
+    (3, "Departamento"),
+    (4, "Casa"),
+    (5, "Terreno")
+    ]
+
+  estadodepredio = models.IntegerField(
+    null=False,
+    blank=False,
+    choices=listadeestados,
+    default=1
+  )
+
+  # get_tipo_display=estadodepredio.get_estadodepredio_choices()
 
   created_date = models.DateTimeField(default=timezone.now)
   published_date = models.DateTimeField(blank=True, null=True)
